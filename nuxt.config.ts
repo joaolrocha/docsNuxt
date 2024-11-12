@@ -59,13 +59,6 @@ export default defineNuxtConfig({
         braceStyle: '1tbs'
       }
     }
-  },
-
-  studio: {
-    gitInfo: {
-      name: 'docsNuxt',
-      owner: 'https://github.com/joaolrocha',
-      url: 'https://github.com/joaolrocha/docsNuxt'
-    }
   }
+
 })
