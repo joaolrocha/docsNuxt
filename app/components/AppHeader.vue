@@ -1,9 +1,23 @@
 <script setup lang="ts">
-import type { NavItem } from '@nuxt/content'
+// import { navigateTo } from '#app'; // Importar navigateTo para realizar a navegação programática
+import type { NavItem } from '@nuxt/content';
 
 const navigation = inject<NavItem[]>('navigation', [])
-
+const { token } = storeToRefs(useAuthStore())
 const { header } = useAppConfig()
+const { signOut } = useAuthStore()
+
+const logout = () => {
+  signOut()
+  useAuthStore().$reset()
+  useSystemStore().$reset()
+  // useRouterStore().$reset()
+}
+
+// Função para redirecionar para a página /getting-started ao clicar na logo
+// const goToGettingStarted = () => {
+//   navigateTo('/getting-started')
+// }
 </script>
 
 <template>
@@ -39,9 +53,12 @@ const { header } = useAppConfig()
 
       <template v-if="header?.links">
         <UButton
-          v-for="(link, index) of header.links"
-          :key="index"
-          v-bind="{ color: 'gray', variant: 'ghost', ...link }"
+          v-if="token"
+          icon="i-heroicons-arrow-right-20-solid"
+          trailing
+          color="black"
+          class="flex bg-center"
+          @click="logout()"
         />
       </template>
     </template>

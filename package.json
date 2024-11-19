@@ -25,6 +25,8 @@
     "@nuxt/eslint": "^0.6.0",
     "@nuxthq/studio": "^2.1.1",
     "eslint": "^9.13.0",
+    "@pinia-plugin-persistedstate/nuxt": "^1.2.1",
+    "@pinia/nuxt": "^0.5.5",
     "vue-tsc": "^2.1.6"
   },
   "packageManager": "pnpm@9.12.2"

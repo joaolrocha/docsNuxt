@@ -9,7 +9,9 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/ui',
     '@nuxthq/studio',
-    'nuxt-og-image'
+    'nuxt-og-image',
+    '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
   ],
 
   devtools: {
@@ -50,15 +52,15 @@ export default defineNuxtConfig({
 
       globals.forEach(c => c.global = true)
     }
-  },
-
-  eslint: {
-    config: {
-      stylistic: {
-        commaDangle: 'never',
-        braceStyle: '1tbs'
-      }
-    }
   }
+
+  // eslint: {
+  //   config: {
+  //     stylistic: {
+  //       commaDangle: 'never',
+  //       braceStyle: '1tbs'
+  //     }
+  //   }
+  // }
 
 })
